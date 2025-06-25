@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Instagram Bootstrap Only</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar bg-light px-4 d-flex justify-content-between">
+  <div class="d-flex align-items-center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" width="25" class="me-2">
+    <strong>Instagram</strong>
+  </div>
+  <div class="d-flex gap-2">
+
+    
+    <!-- ✅ Botón que abre el modal -->
+    <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#newPostModal">
+      Create a new post
+    </button>
+
+
+    <!-- <button class="btn btn-secondary btn-sm"><i class="bi bi-gear-fill"></i></button> -->
+     <div class="dropdown">
+  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="bi bi-gear-fill"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><a class="dropdown-item" href="#">Profile</a></li>
+    <li><a class="dropdown-item" href="#">Accessibility</a></li>
+    <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+  </ul>
+</div>
+  </div>
+</nav>
+
+<!-- ✅ Modal para nuevo post -->
+<div class="modal fade" id="newPostModal" tabindex="-1" aria-labelledby="newPostModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newPostModalLabel">Create a New Post</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="postTitle" class="form-label">Title</label>
+            <input type="text" class="form-control" id="postTitle" placeholder="Enter post title">
+          </div>
+          <div class="mb-3">
+            <label for="postImage" class="form-label">Image URL</label>
+            <input type="url" class="form-control" id="postImage" placeholder="https://example.com/image.jpg">
+          </div>
+          <div class="mb-3">
+            <label for="postCaption" class="form-label">Caption</label>
+            <textarea class="form-control" id="postCaption" rows="3" placeholder="Write something..."></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Post</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Botones de vista -->
+<div class="container text-center my-3">
+  <div class="btn-group" role="group">
+    <button id="gridBtn" type="button" class="btn btn-outline-primary active">
+      <i class="bi bi-grid-3x3-gap-fill"></i>
+    </button>
+    <button id="feedBtn" type="button" class="btn btn-outline-secondary">
+      <i class="bi bi-square-fill"></i>
+    </button>
+  </div>
+</div>
+
+<!-- Vista GRID -->
+<div id="gridView" class="container">
+  <div class="row g-2">
+    <div class="col-4"><img src="https://picsum.photos/seed/1/400" class="img-fluid"></div>
+    <div class="col-4"><img src="https://picsum.photos/seed/2/400" class="img-fluid"></div>
+    <div class="col-4"><img src="https://picsum.photos/seed/3/400" class="img-fluid"></div>
+    <div class="col-4"><img src="https://picsum.photos/seed/4/400" class="img-fluid"></div>
+    <div class="col-4"><img src="https://picsum.photos/seed/5/400" class="img-fluid"></div>
+    <div class="col-4"><img src="https://picsum.photos/seed/6/400" class="img-fluid"></div>
+    <div class="col-4"><img src="https://picsum.photos/seed/7/400" class="img-fluid"></div>
+    <div class="col-4"><img src="https://picsum.photos/seed/8/400" class="img-fluid"></div>
+    <div class="col-4"><img src="https://picsum.photos/seed/9/400" class="img-fluid"></div>
+  </div>
+</div>
+
+<!-- Vista FEED -->
+<div id="feedView" class="container d-none">
+  <div class="card mb-4">
+    <div class="card-header d-flex justify-content-between">
+      <strong>My Crazy dog Spark!</strong>
+      <span>08/26</span>
+    </div>
+    <img src="https://picsum.photos/seed/10/800" class="card-img-top">
+    <div class="card-body">
+      <p><strong>204 Likes</strong><br>This is an example of a very good photo that you can post on Instagram</p>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header d-flex justify-content-between">
+      <strong>The greatness of Croatia</strong>
+      <span>04/09</span>
+    </div>
+    <img src="https://picsum.photos/seed/11/800" class="card-img-top">
+    <div class="card-body">
+      <p><strong>26895 Likes</strong><br>This is an example of a very good photo that you can post on Instagram</p>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header d-flex justify-content-between">
+      <strong>Amazing GOAL by Cristiano!</strong>
+      <span>06/10</span>
+    </div>
+    <img src="https://picsum.photos/seed/12/800" class="card-img-top">
+    <div class="card-body">
+      <p><strong>204 Likes</strong><br>This is an example of a very good photo that you can post on Instagram</p>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ Bootstrap JS (fuera del <script> personalizado) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Script para cambiar vistas -->
+<script>
+  const gridBtn = document.getElementById('gridBtn');
+  const feedBtn = document.getElementById('feedBtn');
+  const gridView = document.getElementById('gridView');
+  const feedView = document.getElementById('feedView');
+
+  gridBtn.addEventListener('click', () => {
+    gridView.classList.remove('d-none');
+    feedView.classList.add('d-none');
+    gridBtn.classList.add('active');
+    feedBtn.classList.remove('active');
+  });
+
+  feedBtn.addEventListener('click', () => {
+    gridView.classList.add('d-none');
+    feedView.classList.remove('d-none');
+    gridBtn.classList.remove('active');
+    feedBtn.classList.add('active');
+  });
+</script>
+
+</body>
+</html>
